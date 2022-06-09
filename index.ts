@@ -6,11 +6,15 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT;
 
-app.post('/users', (req: Request, res: Response) => {
+app.post('/Register', (req: Request, res: Response) => {
   console.log(req.body);
-  res.send('Registrado'); 
+  res.send('Registrado con éxito'); 
 });
 
+app.post('/login', (req: Request, res: Response) => {
+  console.log(req.body);
+  res.send('Logueado con éxito'); 
+});
 
 app.get('/', (req: Request, res: Response) => { 
   res.send('Bienvenido al registro. NodeJS + Express + JWT') 

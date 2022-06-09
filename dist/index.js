@@ -8,9 +8,13 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
-app.post('/users', (req, res) => {
+app.post('/Register', (req, res) => {
     console.log(req.body);
-    res.send('Registrado');
+    res.send('Registrado con éxito');
+});
+app.post('/login', (req, res) => {
+    console.log(req.body);
+    res.send('Logueado con éxito');
 });
 app.get('/', (req, res) => {
     res.send('Bienvenido al registro. NodeJS + Express + JWT');
