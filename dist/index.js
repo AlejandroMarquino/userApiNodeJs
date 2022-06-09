@@ -9,12 +9,13 @@ dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
 app.post('/users', (req, res) => {
-    console.log(req);
-    res.send(req.body);
+    console.log(req.body);
+    res.send('Registrado');
 });
 app.get('/', (req, res) => {
-    res.send('NodeJs + Express');
+    res.send('Bienvenido al registro. NodeJS + Express + JWT');
 });
 app.listen(port, () => {
     console.log(`[server]: Server is running at https://localhost:${port}`);
 });
+app.use(express_1.default.json());
