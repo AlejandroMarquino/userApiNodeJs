@@ -8,7 +8,8 @@ const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = process.env.PORT;
-app.post('/Register', (req, res) => {
+app.use(express_1.default.json());
+app.post('/register', (req, res) => {
     console.log(req.body);
     res.send('Registrado con éxito');
 });
@@ -22,4 +23,3 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`[server]: Server is running at https://localhost:${port}`);
 });
-app.use(express_1.default.json());

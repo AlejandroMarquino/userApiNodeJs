@@ -6,7 +6,9 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT;
 
-app.post('/Register', (req: Request, res: Response) => {
+app.use(express.json());
+
+app.post('/register', (req: Request, res: Response) => {
   console.log(req.body);
   res.send('Registrado con éxito'); 
 });
@@ -24,4 +26,3 @@ app.listen(port, () => {
   console.log(`[server]: Server is running at https://localhost:${port}`);
 });
 
-app.use(express.json());
